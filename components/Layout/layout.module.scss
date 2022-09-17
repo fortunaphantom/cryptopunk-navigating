@@ -1,0 +1,14 @@
+#layout {
+  height: 10px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex-grow: 1;
+  }
+}
+
+.red {
+  background-color: red;
+}
