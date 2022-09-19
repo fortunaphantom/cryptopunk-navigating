@@ -25,7 +25,7 @@ const Home: NextPageWithLayout = () => {
 
   useEffect(() => {
     getMoreNFTs();
-  }, []);
+  }, []); //eslint-disable-line
 
   const getMoreNFTs = async () => {
     let moreList = await getNFTs();

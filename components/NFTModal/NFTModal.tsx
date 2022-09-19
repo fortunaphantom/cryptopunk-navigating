@@ -17,7 +17,6 @@ import {
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClone } from "@fortawesome/free-solid-svg-icons";
-import Image from "next/image";
 import { shortenWalletAddress } from "utils/utils";
 
 interface NFTProps {

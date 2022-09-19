@@ -14,3 +14,6 @@ module.exports = {
     includePaths: [path.join(__dirname, 'styles'), path.join(__dirname, 'components')],
   },
 }
+
+const withImages = require('next-images')
+module.exports = withImages()
