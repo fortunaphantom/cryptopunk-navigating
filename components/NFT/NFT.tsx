@@ -20,7 +20,6 @@ export default function NFT({ item, onClick }: NFTProps) {
           className={imageLoaded ? style.show : ''}
           alt="nft"
           onLoad={() => {
-            console.log('loaded')
             setImageLoaded(true)
           }}
         />

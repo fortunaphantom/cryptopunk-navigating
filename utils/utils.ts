@@ -45,9 +45,6 @@ export const getNFTs = () =>
         token_id: parseInt(item.token_id),
         token_uri: item.token_uri,
       }))
-
-      console.log(nftList)
-
       resolve(nftList)
     } catch (error) {
       console.log("getNFTs: ", error);
