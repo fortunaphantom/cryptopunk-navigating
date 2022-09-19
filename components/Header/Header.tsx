@@ -37,19 +37,22 @@ export default function Header() {
   };
 
   return (
-    <header>
+    <header id={style.header}>
       <Container
-        id={style.header}
         maxW={{
           sm: "container.sm",
           md: "container.md",
           lg: "container.lg",
           xl: "container.xl",
         }}
+        display='flex'
+        alignItems={'center'}
+        justifyContent='space-between'
       >
         <div className={style.logo}>
           <Image src="/images/logo.png" alt="logo" />
         </div>
+        
         <Button
           bg={"primary.main"}
           color="white"

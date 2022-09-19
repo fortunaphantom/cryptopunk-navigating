@@ -20,9 +20,10 @@ import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 
 const { chains, provider, webSocketProvider } = configureChains(defaultChains, [
-  infuraProvider({ apiKey: "c1ba29d27c6b40779d9a00a8850d4f9e" }),
+  infuraProvider({ apiKey: process.env.NEXT_APP_INFURA_ID }),
   publicProvider(),
 ]);
+
 
 // Set up client
 const client = createClient({

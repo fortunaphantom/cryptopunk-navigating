@@ -1,15 +1,24 @@
 #header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+  box-shadow: 0 1px 5px 0 #ea23b0;
+  border-bottom: 1px solid #ea34b0;
 
   padding-top: 24px;
   padding-bottom: 24px;
 
   .logo {
+    height: 36px;
+    display: flex;
+    align-items: center;
+
     img {
       display: block;
       height: 36px;
+
+      @media screen and (max-width: 480px) {
+        width: 150px;
+        height: auto;
+      }
     }
   }
 }
