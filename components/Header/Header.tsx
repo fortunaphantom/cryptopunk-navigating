@@ -22,6 +22,7 @@ export default function Header() {
 
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
+  // Open wallet modal when connect button is clicked
   const handleConnectButtonClick = () => {
     if (isConnected) {
       disconnect()
@@ -31,7 +32,8 @@ export default function Header() {
     }
   }
 
-  const handleConnectWallet = async (wallet: number) => {
+  // Connect wallet when the wallet button is clicked
+  const handleConnectWalletClick = async (wallet: number) => {
     setModalIsOpen(false);
     connect({ connector: connectors[wallet] });
   };
@@ -86,7 +88,7 @@ export default function Header() {
               size={"lg"}
               padding={"24px"}
               bg={"#f7c495"}
-              onClick={() => handleConnectWallet(0)}
+              onClick={() => handleConnectWalletClick(0)}
             >
               Metamask
             </Button>
@@ -95,7 +97,7 @@ export default function Header() {
               padding={"24px"}
               size="lg"
               bg={"#b5cbfb"}
-              onClick={() => handleConnectWallet(1)}
+              onClick={() => handleConnectWalletClick(1)}
             >
               Coinbase
             </Button>
@@ -106,7 +108,7 @@ export default function Header() {
               padding={"24px"}
               size="lg"
               bg={"#a9e5d4"}
-              onClick={() => handleConnectWallet(2)}
+              onClick={() => handleConnectWalletClick(2)}
             >
               Wallet Connect
             </Button>

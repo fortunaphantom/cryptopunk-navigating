@@ -4,6 +4,7 @@ let cursor: string = "";
 let totalSupply: number = 0
 const punkContracAddress: string = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB";
 
+// Shorten a wallet address
 export const shortenWalletAddress = (address: any) => {
   return `${address.slice(0, 5)}...${address.slice(
     address.length - 4,
@@ -11,7 +12,7 @@ export const shortenWalletAddress = (address: any) => {
   )}`;
 };
 
-
+// Load 50 crypto punks by order using Moralis API
 export const getNFTs = () =>
   new Promise(async (resolve: (value: NFTItem[]) => void, reject) => {
     try {

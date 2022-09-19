@@ -14,6 +14,7 @@ import {
   Tag,
   TagLabel,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClone } from "@fortawesome/free-solid-svg-icons";
@@ -26,6 +27,18 @@ interface NFTProps {
 }
 
 export default function NFTModal({ item, isOpen, onClose }: NFTProps) {
+  const toast = useToast()
+
+  // Copy topen address to clipboard
+  const handleCopyAddress = () => {
+    navigator.clipboard.writeText(item.token_address)
+    toast({
+      description: 'Address Copied',
+      position: 'top',
+      status: "success"
+    })
+  }
+
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
@@ -97,13 +110,15 @@ export default function NFTModal({ item, isOpen, onClose }: NFTProps) {
                 fontWeight="bold"
                 marginLeft={"8px"}
                 cursor='pointer'
-                onClick={() =>
-                  navigator.clipboard.writeText(item.token_address)
-                }
+                onClick={handleCopyAddress}
               >
                 <FontAwesomeIcon icon={faClone} size="xs" />
               </Text>
             </Flex>
+            
+            <Heading as="h3" size="md" marginBottom={'8px'}>
+              Attributes
+            </Heading>
             <Flex gap={2} flexWrap='wrap'>
               {item.metadata?.attributes?.map((attr: any) => (
                 <Tag

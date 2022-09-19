@@ -30,3 +30,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #f56ee3;
 }
+
+.infinite-scroll-component {
+  overflow: visible !important;
+}

@@ -23,10 +23,12 @@ const Home: NextPageWithLayout = () => {
     token_uri: "",
   });
 
+  // Load first 50 crypto punks
   useEffect(() => {
     getMoreNFTs();
   }, []); //eslint-disable-line
 
+  // Load next 50 crypto punks
   const getMoreNFTs = async () => {
     let moreList = await getNFTs();
     let tmp = nftList.map((nft) => nft);
@@ -36,6 +38,7 @@ const Home: NextPageWithLayout = () => {
     setNftList(tmp);
   };
 
+  // Open NFT modal when an NFT is clicked
   const handleNFTClick = (index: number) => {
     setSelectedItem(nftList[index]);
     setIsModalOpen(true)
