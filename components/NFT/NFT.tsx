@@ -4,14 +4,15 @@ import React, { useState } from "react";
 import style from "./nft.module.scss";
 
 interface NFTProps {
-  item: NFTItem;
+  item: NFTItem,
+  onClick: () => void
 }
 
-export default function NFT({ item }: NFTProps) {
+export default function NFT({ item, onClick }: NFTProps) {
   const [imageLoaded, setImageLoaded] = useState<boolean>(false);
 
   return (
-    <div className={style.nft}>
+    <div className={style.nft} onClick={onClick}>
       <div className={style["nft-image"]}>
         <img
           // src={'/images/logo.png'}

@@ -64,6 +64,7 @@ export default function Header() {
           {isConnected ? shortenWalletAddress(address) : "Connect Wallet"}
         </Button>
       </Container>
+      
       <Modal isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)}>
         <ModalOverlay />
         <ModalContent>
